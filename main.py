@@ -25,7 +25,9 @@ def makePath(file_name):
     :param file_name: A string representing a file name
     :return: A string representing the path to a specified file
     """
-    return os.path.abspath(os.path.join(os.getcwd(), file_name))
+    folder = os.path.join(os.getcwd(), 'output')
+    os.makedirs(folder, exist_ok=True)
+    return os.path.abspath(os.path.join(folder, file_name))
 
 
 def folderTraverse(base):
